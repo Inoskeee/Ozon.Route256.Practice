@@ -1,0 +1,550 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F6EB85C-C799-4A9F-9EEF-481AF9651953}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9B681854-76E8-459C-95C3-10C4520FB343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersService", "src\Ozon.Route256.Practice.OrdersService\Ozon.Route256.Practice.OrdersService.csproj", "{518DC7E1-F7CB-459F-A89C-413A9701B9DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.CustomerService", "src\Ozon.Route256.Practice.CustomerService\Ozon.Route256.Practice.CustomerService.csproj", "{8BAC012B-3C9E-4DCB-9E11-193741447C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.CustomerService.UnitTests", "tests\Ozon.Route256.Practice.CustomerService.UnitTests\Ozon.Route256.Practice.CustomerService.UnitTests.csproj", "{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.DataGenerator.UnitTests", "tests\Ozon.Route256.Practice.DataGenerator.UnitTests\Ozon.Route256.Practice.DataGenerator.UnitTests.csproj", "{2EEB9C1D-1A14-4148-A917-F543ADB06435}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.DataGenerator", "Ozon.Route256.Practice.DataGenerator", "{4950E31F-E920-4D55-821D-A39341B04329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrderService.UnitTests", "tests\Ozon.Route256.Practice.OrderService.UnitTests\Ozon.Route256.Practice.OrderService.UnitTests.csproj", "{4C506C13-0D63-4024-9B45-86497AE47116}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{53A6CE1D-52D1-40BA-A7FA-BDF4BA91F596}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.TestService\src\Directory.Build.props = src\Ozon.Route256.Practice.TestService\src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{C3D72019-EB36-43B4-B621-08B094A9B29B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{7104DB21-AD08-4C69-97B2-3509ED2057D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{16C812B4-C5AE-473D-8814-A131D9315923}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		docker-compose.yaml = docker-compose.yaml
+		nuget.config = nuget.config
+		README.md = README.md
+		.gitlab-ci.yml = .gitlab-ci.yml
+		.env = .env
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{27180FE6-5297-4DB3-8293-B6886C7E127E}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.TestService\.editorconfig = src\Ozon.Route256.Practice.TestService\.editorconfig
+		src\Ozon.Route256.Practice.TestService\.gitignore = src\Ozon.Route256.Practice.TestService\.gitignore
+		src\Ozon.Route256.Practice.TestService\Directory.Build.props = src\Ozon.Route256.Practice.TestService\Directory.Build.props
+		src\Ozon.Route256.Practice.TestService\Directory.Build.targets = src\Ozon.Route256.Practice.TestService\Directory.Build.targets
+		src\Ozon.Route256.Practice.TestService\Directory.Packages.props = src\Ozon.Route256.Practice.TestService\Directory.Packages.props
+		src\Ozon.Route256.Practice.TestService\nuget.config = src\Ozon.Route256.Practice.TestService\nuget.config
+		src\Ozon.Route256.Practice.TestService\Dockerfile = src\Ozon.Route256.Practice.TestService\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migrations", "migrations", "{E07590A8-1E08-4B32-852C-8BBFC182E2A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.TestService", "Ozon.Route256.Practice.TestService", "{B2B03DAD-4022-4A80-AFD2-AA0A467C402D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService\Ozon.Route256.Practice.TestService.csproj", "{8ED9152A-34A4-4B61-B107-8938A7E7F261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Common.Config", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Common.Config\Ozon.Route256.Practice.TestService.Common.Config.csproj", "{04FE061A-5A23-4FF5-981A-99FC7224D36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Common.Data", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Common.Data\Ozon.Route256.Practice.TestService.Common.Data.csproj", "{BCB9A125-95AD-48EB-BD2C-610CC195F929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Common.Kafka", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Common.Kafka\Ozon.Route256.Practice.TestService.Common.Kafka.csproj", "{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Data.Customers", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Data.Customers\Ozon.Route256.Practice.TestService.Data.Customers.csproj", "{1500FBEE-C29F-4798-85D6-D8B748B2F17A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Domain", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Domain\Ozon.Route256.Practice.TestService.Domain.csproj", "{4B4B9940-292D-400B-88E7-F5F09304CA82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Publisher", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Publisher\Ozon.Route256.Practice.TestService.Publisher.csproj", "{F51D6265-3999-430E-9FB0-F946EAC75B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Data", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Data\Ozon.Route256.Practice.TestService.Data.csproj", "{299176A2-CF96-47EF-BC48-48125D57A91B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Data.Orders", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Data.Orders\Ozon.Route256.Practice.TestService.Data.Orders.csproj", "{476517C7-2058-47AE-A591-618B2B457958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.TestService.Integrations", "src\Ozon.Route256.Practice.TestService\src\Ozon.Route256.Practice.TestService.Integrations\Ozon.Route256.Practice.TestService.Integrations.csproj", "{AAD9AFFD-99CC-4E69-865B-3171AC6402B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{31C6004C-7B4E-485A-8980-3A1E10B360F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.DataGenerator", "src\Ozon.Route256.Practice.DataGenerator\src\Ozon.Route256.Practice.DataGenerator\Ozon.Route256.Practice.DataGenerator.csproj", "{2497C798-0786-49E0-8F11-DB1E8FA36EB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.DataGenerator.Bill", "src\Ozon.Route256.Practice.DataGenerator\src\Ozon.Route256.Practice.DataGenerator.Bill\Ozon.Route256.Practice.DataGenerator.Bill.csproj", "{7B90E180-0BD0-4F73-83BD-8A400F36EE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.DataGenerator.Infra", "src\Ozon.Route256.Practice.DataGenerator\src\Ozon.Route256.Practice.DataGenerator.Infra\Ozon.Route256.Practice.DataGenerator.Infra.csproj", "{8DB01EE4-53BC-4F3E-B963-0D7120DA4604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.DataGenerator.Proto", "src\Ozon.Route256.Practice.DataGenerator\src\Ozon.Route256.Practice.DataGenerator.Proto\Ozon.Route256.Practice.DataGenerator.Proto.csproj", "{53B0B33F-48DF-4557-B35B-9E590AB68750}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{2DA40770-501F-4CB2-A2A4-D52A63B39316}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.DataGenerator\Dockerfile = src\Ozon.Route256.Practice.DataGenerator\Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "customers", "customers", "{1C30AEFE-A235-47BD-AA2C-4654D01B846E}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.TestService\migrations\customers\init.sql = src\Ozon.Route256.Practice.TestService\migrations\customers\init.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "orders", "orders", "{4BB8E18F-2B43-41DF-85B8-062ADDDE9652}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.TestService\migrations\orders\init.sql = src\Ozon.Route256.Practice.TestService\migrations\orders\init.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migrations", "migrations", "{625EF29E-D607-4E9C-93F3-413903509A16}"
+	ProjectSection(SolutionItems) = preProject
+		migrations\init.sql = migrations\init.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.OrdersFacade", "Ozon.Route256.Practice.OrdersFacade", "{3FF32B81-DA17-4948-B347-7581D964B56F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55DD264A-3904-465D-89AF-FA1E00696B96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{0EA421B2-67C9-4FFF-9E0E-B7BB25BC9A95}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.OrdersFacade\src\.dockerignore = src\Ozon.Route256.Practice.OrdersFacade\src\.dockerignore
+		src\Ozon.Route256.Practice.OrdersFacade\src\Dockerfile = src\Ozon.Route256.Practice.OrdersFacade\src\Dockerfile
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade", "src\Ozon.Route256.Practice.OrdersFacade\src\Ozon.Route256.Practice.OrdersFacade\Ozon.Route256.Practice.OrdersFacade.csproj", "{432D9A7D-4C23-4465-A7E0-B72C628AAB11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade.Presentation", "src\Ozon.Route256.Practice.OrdersFacade\src\Ozon.Route256.Practice.OrdersFacade.Presentation\Ozon.Route256.Practice.OrdersFacade.Presentation.csproj", "{F32E6C34-5E95-419B-B027-5B0B79665819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade.Bll", "src\Ozon.Route256.Practice.OrdersFacade\src\Ozon.Route256.Practice.OrdersFacade.Bll\Ozon.Route256.Practice.OrdersFacade.Bll.csproj", "{C6D5A799-D9FB-43CE-8A14-64849E9EF96E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade.Bll.Grpc", "src\Ozon.Route256.Practice.OrdersFacade\src\Ozon.Route256.Practice.OrdersFacade.Bll.Grpc\Ozon.Route256.Practice.OrdersFacade.Bll.Grpc.csproj", "{B5DCE858-9015-4676-80BD-909655DE2FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade.Bll.Http", "src\Ozon.Route256.Practice.OrdersFacade\src\Ozon.Route256.Practice.OrdersFacade.Bll.Http\Ozon.Route256.Practice.OrdersFacade.Bll.Http.csproj", "{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersFacade.UnitTests", "tests\Ozon.Route256.Practice.OrdersFacade.UnitTests\Ozon.Route256.Practice.OrdersFacade.UnitTests.csproj", "{75331180-0EBF-4BD7-AEDA-851245B0E9D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.ClientBalance", "Ozon.Route256.Practice.ClientBalance", "{EF3A479D-A2CA-4A75-9BE8-861C783A30E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{095F80DE-ECD6-4BF1-A6D4-D0B4511FB80B}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.ClientBalance\src\Dockerfile = src\Ozon.Route256.Practice.ClientBalance\src\Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{28DB43C8-0972-44B5-9110-074E6ACB18D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientBalance", "src\Ozon.Route256.Practice.ClientBalance\src\Ozon.Route256.Practice.ClientBalance\Ozon.Route256.Practice.ClientBalance.csproj", "{0E17A85D-381D-4B47-9376-199007797256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientBalance.Bll", "src\Ozon.Route256.Practice.ClientBalance\src\Ozon.Route256.Practice.ClientBalance.Bll\Ozon.Route256.Practice.ClientBalance.Bll.csproj", "{A3DA7DC3-745E-4B29-891C-1369E76904A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientBalance.Dal", "src\Ozon.Route256.Practice.ClientBalance\src\Ozon.Route256.Practice.ClientBalance.Dal\Ozon.Route256.Practice.ClientBalance.Dal.csproj", "{89687A98-000D-421A-A822-E0191830F3C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientBalance.Presentation", "src\Ozon.Route256.Practice.ClientBalance\src\Ozon.Route256.Practice.ClientBalance.Presentation\Ozon.Route256.Practice.ClientBalance.Presentation.csproj", "{3795B91F-EFD1-453B-A2BC-B2C39B27431D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientBalance.IntegrationTests", "tests\Ozon.Route256.Practice.ClientBalance.IntegrationTests\Ozon.Route256.Practice.ClientBalance.IntegrationTests.csproj", "{EB93FA4B-9253-4B8F-B07D-8333714167D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.OrdersReport", "Ozon.Route256.Practice.OrdersReport", "{A7EC7EF6-EE3C-46C4-8DDE-27519907D8BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{28BBB719-F30D-4CF1-8EE5-BFFE668EFA10}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.OrdersReport\src\Dockerfile = src\Ozon.Route256.Practice.OrdersReport\src\Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F0242632-A7A3-4C85-8877-2E83313A4FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersReport", "src\Ozon.Route256.Practice.OrdersReport\src\Ozon.Route256.Practice.OrdersReport\Ozon.Route256.Practice.OrdersReport.csproj", "{351902F5-0958-40E4-B3FC-CA1347119A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersReport.Bll", "src\Ozon.Route256.Practice.OrdersReport\src\Ozon.Route256.Practice.OrdersReport.Bll\Ozon.Route256.Practice.OrdersReport.Bll.csproj", "{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersReport.Presentation", "src\Ozon.Route256.Practice.OrdersReport\src\Ozon.Route256.Practice.OrdersReport.Presentation\Ozon.Route256.Practice.OrdersReport.Presentation.csproj", "{190B6714-AE79-459E-9401-3F95E392AF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.OrdersReport.Bll.Contracts", "src\Ozon.Route256.Practice.OrdersReport\src\Ozon.Route256.Practice.OrdersReport.Bll.Contracts\Ozon.Route256.Practice.OrdersReport.Bll.Contracts.csproj", "{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.ClientOrders", "Ozon.Route256.Practice.ClientOrders", "{08C8416E-6ADB-469E-A2E6-17953169C622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{07F56940-EFC0-4C66-966A-64C31FD9206F}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.ClientOrders\src\Dockerfile = src\Ozon.Route256.Practice.ClientOrders\src\Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders\Ozon.Route256.Practice.ClientOrders.csproj", "{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Bll", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Bll\Ozon.Route256.Practice.ClientOrders.Bll.csproj", "{FEFDF318-C81E-4797-A622-B9BD64C8409B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Infra.Postgres", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Infra.Postgres\Ozon.Route256.Practice.ClientOrders.Infra.Postgres.csproj", "{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Infra.Kafka", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Infra.Kafka\Ozon.Route256.Practice.ClientOrders.Infra.Kafka.csproj", "{94845750-1342-44C5-B168-463976D76486}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{9FEDD16B-742F-43FC-8566-257730680D94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Presentation", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Presentation\Ozon.Route256.Practice.ClientOrders.Presentation.csproj", "{4669DF10-82D2-4874-AAFE-9C4042A7F2FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Infra.OrdersService", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Infra.OrdersService\Ozon.Route256.Practice.ClientOrders.Infra.OrdersService.csproj", "{D338937D-0C4B-4850-854C-562BCFBE535B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ClientOrders.Infra.CustomerService", "src\Ozon.Route256.Practice.ClientOrders\src\Ozon.Route256.Practice.ClientOrders.Infra.CustomerService\Ozon.Route256.Practice.ClientOrders.Infra.CustomerService.csproj", "{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.ViewOrderService", "Ozon.Route256.Practice.ViewOrderService", "{07AB7E71-F865-4A61-B205-BAD5A07C150A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9BB695F1-1BCA-46BC-BE4D-5397A2CB97E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{3007DA4D-4928-46F2-8036-3B905B723D15}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.ViewOrderService\src\Dockerfile = src\Ozon.Route256.Practice.ViewOrderService\src\Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService\Ozon.Route256.Practice.ViewOrderService.csproj", "{5F9647E7-2593-4EC7-8FE9-831607DE7B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Bll", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Bll\Ozon.Route256.Practice.ViewOrderService.Bll.csproj", "{C1934CEC-C03D-4DAA-A047-581104A3C996}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{A39F929C-51DC-41D8-8049-AE2A3B80698D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Infra.Postgres", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Infra.Postgres\Ozon.Route256.Practice.ViewOrderService.Infra.Postgres.csproj", "{A175102F-FB44-4BB7-BFE9-863711CB0610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Infra.PostgresMigrator", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Infra.PostgresMigrator\Ozon.Route256.Practice.ViewOrderService.Infra.PostgresMigrator.csproj", "{6677A856-BCF9-4978-9B79-449B817FAA61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.IntegrationTests", "tests\Ozon.Route256.Practice.ViewOrderService.IntegrationTests\Ozon.Route256.Practice.ViewOrderService.IntegrationTests.csproj", "{D92BC027-973C-41BD-8E57-A3F3C3E54640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Infra.PostgresCommon", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Infra.PostgresCommon\Ozon.Route256.Practice.ViewOrderService.Infra.PostgresCommon.csproj", "{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Infra.Kafka", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Infra.Kafka\Ozon.Route256.Practice.ViewOrderService.Infra.Kafka.csproj", "{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ViewOrderService.Infra.OrdersService", "src\Ozon.Route256.Practice.ViewOrderService\src\Ozon.Route256.Practice.ViewOrderService.Infra.OrdersService\Ozon.Route256.Practice.ViewOrderService.Infra.OrdersService.csproj", "{17EA9DF4-C443-4E2B-BFE7-142F62617860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ozon.Route256.Practice.ProductCardService", "Ozon.Route256.Practice.ProductCardService", "{5063E4F2-FB3B-43A5-B541-1CD5A1D5C0A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8BE0A0B2-5A88-4931-9325-19422058DDF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{E7F629AB-7F3C-43FF-B5F2-A3C198FB8557}"
+	ProjectSection(SolutionItems) = preProject
+		src\Ozon.Route256.Practice.ProductCardService\src\Dockerfile = src\Ozon.Route256.Practice.ProductCardService\src\Dockerfile
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ProductCardService.Host", "src\Ozon.Route256.Practice.ProductCardService\src\Ozon.Route256.Practice.ProductCardService.Host\Ozon.Route256.Practice.ProductCardService.Host.csproj", "{D7830352-1CFC-443C-8F0F-CEAAE1D8058B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ProductCardService.Application", "src\Ozon.Route256.Practice.ProductCardService\src\Ozon.Route256.Practice.ProductCardService.Application\Ozon.Route256.Practice.ProductCardService.Application.csproj", "{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ProductCardService.Infrastructure", "src\Ozon.Route256.Practice.ProductCardService\src\Ozon.Route256.Practice.ProductCardService.Infrastructure\Ozon.Route256.Practice.ProductCardService.Infrastructure.csproj", "{711B3698-4C4E-4D85-8AB0-11F32890D985}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ProductCardService.Domain", "src\Ozon.Route256.Practice.ProductCardService\src\Ozon.Route256.Practice.ProductCardService.Domain\Ozon.Route256.Practice.ProductCardService.Domain.csproj", "{5CE9C132-8BE8-447F-BB71-B19228F818D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ozon.Route256.Practice.ProductCardService.Presentation", "src\Ozon.Route256.Practice.ProductCardService\src\Ozon.Route256.Practice.ProductCardService.Presentation\Ozon.Route256.Practice.ProductCardService.Presentation.csproj", "{E8FF2479-E65E-4064-9D3D-36A437614553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{518DC7E1-F7CB-459F-A89C-413A9701B9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518DC7E1-F7CB-459F-A89C-413A9701B9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518DC7E1-F7CB-459F-A89C-413A9701B9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518DC7E1-F7CB-459F-A89C-413A9701B9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BAC012B-3C9E-4DCB-9E11-193741447C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAC012B-3C9E-4DCB-9E11-193741447C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAC012B-3C9E-4DCB-9E11-193741447C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAC012B-3C9E-4DCB-9E11-193741447C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEB9C1D-1A14-4148-A917-F543ADB06435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEB9C1D-1A14-4148-A917-F543ADB06435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEB9C1D-1A14-4148-A917-F543ADB06435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEB9C1D-1A14-4148-A917-F543ADB06435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C506C13-0D63-4024-9B45-86497AE47116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C506C13-0D63-4024-9B45-86497AE47116}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C506C13-0D63-4024-9B45-86497AE47116}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C506C13-0D63-4024-9B45-86497AE47116}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED9152A-34A4-4B61-B107-8938A7E7F261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED9152A-34A4-4B61-B107-8938A7E7F261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED9152A-34A4-4B61-B107-8938A7E7F261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED9152A-34A4-4B61-B107-8938A7E7F261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FE061A-5A23-4FF5-981A-99FC7224D36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FE061A-5A23-4FF5-981A-99FC7224D36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FE061A-5A23-4FF5-981A-99FC7224D36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FE061A-5A23-4FF5-981A-99FC7224D36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB9A125-95AD-48EB-BD2C-610CC195F929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB9A125-95AD-48EB-BD2C-610CC195F929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB9A125-95AD-48EB-BD2C-610CC195F929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB9A125-95AD-48EB-BD2C-610CC195F929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1500FBEE-C29F-4798-85D6-D8B748B2F17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1500FBEE-C29F-4798-85D6-D8B748B2F17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1500FBEE-C29F-4798-85D6-D8B748B2F17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1500FBEE-C29F-4798-85D6-D8B748B2F17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4B9940-292D-400B-88E7-F5F09304CA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4B9940-292D-400B-88E7-F5F09304CA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4B9940-292D-400B-88E7-F5F09304CA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4B9940-292D-400B-88E7-F5F09304CA82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F51D6265-3999-430E-9FB0-F946EAC75B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F51D6265-3999-430E-9FB0-F946EAC75B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F51D6265-3999-430E-9FB0-F946EAC75B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F51D6265-3999-430E-9FB0-F946EAC75B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299176A2-CF96-47EF-BC48-48125D57A91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299176A2-CF96-47EF-BC48-48125D57A91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299176A2-CF96-47EF-BC48-48125D57A91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299176A2-CF96-47EF-BC48-48125D57A91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{476517C7-2058-47AE-A591-618B2B457958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{476517C7-2058-47AE-A591-618B2B457958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{476517C7-2058-47AE-A591-618B2B457958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{476517C7-2058-47AE-A591-618B2B457958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD9AFFD-99CC-4E69-865B-3171AC6402B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD9AFFD-99CC-4E69-865B-3171AC6402B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD9AFFD-99CC-4E69-865B-3171AC6402B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD9AFFD-99CC-4E69-865B-3171AC6402B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2497C798-0786-49E0-8F11-DB1E8FA36EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2497C798-0786-49E0-8F11-DB1E8FA36EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2497C798-0786-49E0-8F11-DB1E8FA36EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2497C798-0786-49E0-8F11-DB1E8FA36EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B90E180-0BD0-4F73-83BD-8A400F36EE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B90E180-0BD0-4F73-83BD-8A400F36EE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B90E180-0BD0-4F73-83BD-8A400F36EE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B90E180-0BD0-4F73-83BD-8A400F36EE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB01EE4-53BC-4F3E-B963-0D7120DA4604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB01EE4-53BC-4F3E-B963-0D7120DA4604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB01EE4-53BC-4F3E-B963-0D7120DA4604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB01EE4-53BC-4F3E-B963-0D7120DA4604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B0B33F-48DF-4557-B35B-9E590AB68750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B0B33F-48DF-4557-B35B-9E590AB68750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B0B33F-48DF-4557-B35B-9E590AB68750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B0B33F-48DF-4557-B35B-9E590AB68750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432D9A7D-4C23-4465-A7E0-B72C628AAB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432D9A7D-4C23-4465-A7E0-B72C628AAB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432D9A7D-4C23-4465-A7E0-B72C628AAB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432D9A7D-4C23-4465-A7E0-B72C628AAB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32E6C34-5E95-419B-B027-5B0B79665819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32E6C34-5E95-419B-B027-5B0B79665819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32E6C34-5E95-419B-B027-5B0B79665819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32E6C34-5E95-419B-B027-5B0B79665819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D5A799-D9FB-43CE-8A14-64849E9EF96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D5A799-D9FB-43CE-8A14-64849E9EF96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D5A799-D9FB-43CE-8A14-64849E9EF96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D5A799-D9FB-43CE-8A14-64849E9EF96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DCE858-9015-4676-80BD-909655DE2FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DCE858-9015-4676-80BD-909655DE2FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DCE858-9015-4676-80BD-909655DE2FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DCE858-9015-4676-80BD-909655DE2FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75331180-0EBF-4BD7-AEDA-851245B0E9D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75331180-0EBF-4BD7-AEDA-851245B0E9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75331180-0EBF-4BD7-AEDA-851245B0E9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75331180-0EBF-4BD7-AEDA-851245B0E9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E17A85D-381D-4B47-9376-199007797256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E17A85D-381D-4B47-9376-199007797256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E17A85D-381D-4B47-9376-199007797256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E17A85D-381D-4B47-9376-199007797256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DA7DC3-745E-4B29-891C-1369E76904A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DA7DC3-745E-4B29-891C-1369E76904A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DA7DC3-745E-4B29-891C-1369E76904A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DA7DC3-745E-4B29-891C-1369E76904A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89687A98-000D-421A-A822-E0191830F3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89687A98-000D-421A-A822-E0191830F3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89687A98-000D-421A-A822-E0191830F3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89687A98-000D-421A-A822-E0191830F3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3795B91F-EFD1-453B-A2BC-B2C39B27431D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3795B91F-EFD1-453B-A2BC-B2C39B27431D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3795B91F-EFD1-453B-A2BC-B2C39B27431D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3795B91F-EFD1-453B-A2BC-B2C39B27431D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB93FA4B-9253-4B8F-B07D-8333714167D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB93FA4B-9253-4B8F-B07D-8333714167D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB93FA4B-9253-4B8F-B07D-8333714167D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB93FA4B-9253-4B8F-B07D-8333714167D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351902F5-0958-40E4-B3FC-CA1347119A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351902F5-0958-40E4-B3FC-CA1347119A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351902F5-0958-40E4-B3FC-CA1347119A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351902F5-0958-40E4-B3FC-CA1347119A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190B6714-AE79-459E-9401-3F95E392AF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190B6714-AE79-459E-9401-3F95E392AF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190B6714-AE79-459E-9401-3F95E392AF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190B6714-AE79-459E-9401-3F95E392AF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFDF318-C81E-4797-A622-B9BD64C8409B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFDF318-C81E-4797-A622-B9BD64C8409B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFDF318-C81E-4797-A622-B9BD64C8409B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFDF318-C81E-4797-A622-B9BD64C8409B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94845750-1342-44C5-B168-463976D76486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94845750-1342-44C5-B168-463976D76486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94845750-1342-44C5-B168-463976D76486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94845750-1342-44C5-B168-463976D76486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4669DF10-82D2-4874-AAFE-9C4042A7F2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4669DF10-82D2-4874-AAFE-9C4042A7F2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4669DF10-82D2-4874-AAFE-9C4042A7F2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4669DF10-82D2-4874-AAFE-9C4042A7F2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D338937D-0C4B-4850-854C-562BCFBE535B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D338937D-0C4B-4850-854C-562BCFBE535B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D338937D-0C4B-4850-854C-562BCFBE535B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D338937D-0C4B-4850-854C-562BCFBE535B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9647E7-2593-4EC7-8FE9-831607DE7B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9647E7-2593-4EC7-8FE9-831607DE7B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9647E7-2593-4EC7-8FE9-831607DE7B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9647E7-2593-4EC7-8FE9-831607DE7B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1934CEC-C03D-4DAA-A047-581104A3C996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1934CEC-C03D-4DAA-A047-581104A3C996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1934CEC-C03D-4DAA-A047-581104A3C996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1934CEC-C03D-4DAA-A047-581104A3C996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A175102F-FB44-4BB7-BFE9-863711CB0610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A175102F-FB44-4BB7-BFE9-863711CB0610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A175102F-FB44-4BB7-BFE9-863711CB0610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A175102F-FB44-4BB7-BFE9-863711CB0610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6677A856-BCF9-4978-9B79-449B817FAA61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6677A856-BCF9-4978-9B79-449B817FAA61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6677A856-BCF9-4978-9B79-449B817FAA61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6677A856-BCF9-4978-9B79-449B817FAA61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D92BC027-973C-41BD-8E57-A3F3C3E54640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92BC027-973C-41BD-8E57-A3F3C3E54640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92BC027-973C-41BD-8E57-A3F3C3E54640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92BC027-973C-41BD-8E57-A3F3C3E54640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17EA9DF4-C443-4E2B-BFE7-142F62617860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17EA9DF4-C443-4E2B-BFE7-142F62617860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17EA9DF4-C443-4E2B-BFE7-142F62617860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17EA9DF4-C443-4E2B-BFE7-142F62617860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7830352-1CFC-443C-8F0F-CEAAE1D8058B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7830352-1CFC-443C-8F0F-CEAAE1D8058B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7830352-1CFC-443C-8F0F-CEAAE1D8058B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7830352-1CFC-443C-8F0F-CEAAE1D8058B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711B3698-4C4E-4D85-8AB0-11F32890D985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711B3698-4C4E-4D85-8AB0-11F32890D985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711B3698-4C4E-4D85-8AB0-11F32890D985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711B3698-4C4E-4D85-8AB0-11F32890D985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE9C132-8BE8-447F-BB71-B19228F818D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE9C132-8BE8-447F-BB71-B19228F818D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE9C132-8BE8-447F-BB71-B19228F818D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE9C132-8BE8-447F-BB71-B19228F818D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8FF2479-E65E-4064-9D3D-36A437614553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8FF2479-E65E-4064-9D3D-36A437614553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8FF2479-E65E-4064-9D3D-36A437614553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8FF2479-E65E-4064-9D3D-36A437614553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{518DC7E1-F7CB-459F-A89C-413A9701B9DA} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{8BAC012B-3C9E-4DCB-9E11-193741447C11} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{3A9B8537-FB2B-4E63-ADFC-FC77C9FB3BE3} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{2EEB9C1D-1A14-4148-A917-F543ADB06435} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{4950E31F-E920-4D55-821D-A39341B04329} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{4C506C13-0D63-4024-9B45-86497AE47116} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{B2B03DAD-4022-4A80-AFD2-AA0A467C402D} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{04FE061A-5A23-4FF5-981A-99FC7224D36B} = {C3D72019-EB36-43B4-B621-08B094A9B29B}
+		{BCB9A125-95AD-48EB-BD2C-610CC195F929} = {C3D72019-EB36-43B4-B621-08B094A9B29B}
+		{6EBC3232-50BA-4AA6-AF0B-6BB16FA6C93D} = {C3D72019-EB36-43B4-B621-08B094A9B29B}
+		{299176A2-CF96-47EF-BC48-48125D57A91B} = {7104DB21-AD08-4C69-97B2-3509ED2057D8}
+		{1500FBEE-C29F-4798-85D6-D8B748B2F17A} = {7104DB21-AD08-4C69-97B2-3509ED2057D8}
+		{476517C7-2058-47AE-A591-618B2B457958} = {7104DB21-AD08-4C69-97B2-3509ED2057D8}
+		{EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE} = {B2B03DAD-4022-4A80-AFD2-AA0A467C402D}
+		{53A6CE1D-52D1-40BA-A7FA-BDF4BA91F596} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{C3D72019-EB36-43B4-B621-08B094A9B29B} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{7104DB21-AD08-4C69-97B2-3509ED2057D8} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{8ED9152A-34A4-4B61-B107-8938A7E7F261} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{4B4B9940-292D-400B-88E7-F5F09304CA82} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{AAD9AFFD-99CC-4E69-865B-3171AC6402B3} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{F51D6265-3999-430E-9FB0-F946EAC75B05} = {EBE0367F-FE0E-46EB-85F3-77AAA16AA9BE}
+		{27180FE6-5297-4DB3-8293-B6886C7E127E} = {B2B03DAD-4022-4A80-AFD2-AA0A467C402D}
+		{E07590A8-1E08-4B32-852C-8BBFC182E2A3} = {B2B03DAD-4022-4A80-AFD2-AA0A467C402D}
+		{31C6004C-7B4E-485A-8980-3A1E10B360F9} = {4950E31F-E920-4D55-821D-A39341B04329}
+		{2497C798-0786-49E0-8F11-DB1E8FA36EB0} = {31C6004C-7B4E-485A-8980-3A1E10B360F9}
+		{7B90E180-0BD0-4F73-83BD-8A400F36EE53} = {31C6004C-7B4E-485A-8980-3A1E10B360F9}
+		{8DB01EE4-53BC-4F3E-B963-0D7120DA4604} = {31C6004C-7B4E-485A-8980-3A1E10B360F9}
+		{53B0B33F-48DF-4557-B35B-9E590AB68750} = {31C6004C-7B4E-485A-8980-3A1E10B360F9}
+		{2DA40770-501F-4CB2-A2A4-D52A63B39316} = {4950E31F-E920-4D55-821D-A39341B04329}
+		{1C30AEFE-A235-47BD-AA2C-4654D01B846E} = {E07590A8-1E08-4B32-852C-8BBFC182E2A3}
+		{4BB8E18F-2B43-41DF-85B8-062ADDDE9652} = {E07590A8-1E08-4B32-852C-8BBFC182E2A3}
+		{3FF32B81-DA17-4948-B347-7581D964B56F} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{55DD264A-3904-465D-89AF-FA1E00696B96} = {3FF32B81-DA17-4948-B347-7581D964B56F}
+		{0EA421B2-67C9-4FFF-9E0E-B7BB25BC9A95} = {3FF32B81-DA17-4948-B347-7581D964B56F}
+		{432D9A7D-4C23-4465-A7E0-B72C628AAB11} = {55DD264A-3904-465D-89AF-FA1E00696B96}
+		{F32E6C34-5E95-419B-B027-5B0B79665819} = {55DD264A-3904-465D-89AF-FA1E00696B96}
+		{C6D5A799-D9FB-43CE-8A14-64849E9EF96E} = {55DD264A-3904-465D-89AF-FA1E00696B96}
+		{B5DCE858-9015-4676-80BD-909655DE2FF9} = {55DD264A-3904-465D-89AF-FA1E00696B96}
+		{88F4F1AA-A116-48BD-BBDA-FBC7EFC99351} = {55DD264A-3904-465D-89AF-FA1E00696B96}
+		{75331180-0EBF-4BD7-AEDA-851245B0E9D8} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{EF3A479D-A2CA-4A75-9BE8-861C783A30E3} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{095F80DE-ECD6-4BF1-A6D4-D0B4511FB80B} = {EF3A479D-A2CA-4A75-9BE8-861C783A30E3}
+		{28DB43C8-0972-44B5-9110-074E6ACB18D7} = {EF3A479D-A2CA-4A75-9BE8-861C783A30E3}
+		{0E17A85D-381D-4B47-9376-199007797256} = {28DB43C8-0972-44B5-9110-074E6ACB18D7}
+		{A3DA7DC3-745E-4B29-891C-1369E76904A9} = {28DB43C8-0972-44B5-9110-074E6ACB18D7}
+		{89687A98-000D-421A-A822-E0191830F3C5} = {28DB43C8-0972-44B5-9110-074E6ACB18D7}
+		{3795B91F-EFD1-453B-A2BC-B2C39B27431D} = {28DB43C8-0972-44B5-9110-074E6ACB18D7}
+		{EB93FA4B-9253-4B8F-B07D-8333714167D5} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{A7EC7EF6-EE3C-46C4-8DDE-27519907D8BB} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{28BBB719-F30D-4CF1-8EE5-BFFE668EFA10} = {A7EC7EF6-EE3C-46C4-8DDE-27519907D8BB}
+		{F0242632-A7A3-4C85-8877-2E83313A4FAA} = {A7EC7EF6-EE3C-46C4-8DDE-27519907D8BB}
+		{351902F5-0958-40E4-B3FC-CA1347119A1A} = {F0242632-A7A3-4C85-8877-2E83313A4FAA}
+		{49CB68D5-BAC2-4CA0-AD83-EB62DE71A5FA} = {F0242632-A7A3-4C85-8877-2E83313A4FAA}
+		{190B6714-AE79-459E-9401-3F95E392AF33} = {F0242632-A7A3-4C85-8877-2E83313A4FAA}
+		{A5350D85-EBDF-4FC2-B1C6-9A1A22A3E0A7} = {F0242632-A7A3-4C85-8877-2E83313A4FAA}
+		{08C8416E-6ADB-469E-A2E6-17953169C622} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F} = {08C8416E-6ADB-469E-A2E6-17953169C622}
+		{07F56940-EFC0-4C66-966A-64C31FD9206F} = {08C8416E-6ADB-469E-A2E6-17953169C622}
+		{E322E97B-9AF0-4608-8E47-2C8B7B1B78B7} = {7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F}
+		{FEFDF318-C81E-4797-A622-B9BD64C8409B} = {7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F}
+		{9FEDD16B-742F-43FC-8566-257730680D94} = {7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F}
+		{94845750-1342-44C5-B168-463976D76486} = {9FEDD16B-742F-43FC-8566-257730680D94}
+		{4D699ECE-EE5E-48B9-94FD-BFCACB54D20C} = {9FEDD16B-742F-43FC-8566-257730680D94}
+		{4669DF10-82D2-4874-AAFE-9C4042A7F2FA} = {7D042FAA-47A9-4BDA-ADBA-E9D5D2405B7F}
+		{D338937D-0C4B-4850-854C-562BCFBE535B} = {9FEDD16B-742F-43FC-8566-257730680D94}
+		{E5F255AA-5B87-4C8C-8BE3-00ADB1822F39} = {9FEDD16B-742F-43FC-8566-257730680D94}
+		{07AB7E71-F865-4A61-B205-BAD5A07C150A} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{9BB695F1-1BCA-46BC-BE4D-5397A2CB97E3} = {07AB7E71-F865-4A61-B205-BAD5A07C150A}
+		{3007DA4D-4928-46F2-8036-3B905B723D15} = {07AB7E71-F865-4A61-B205-BAD5A07C150A}
+		{5F9647E7-2593-4EC7-8FE9-831607DE7B52} = {9BB695F1-1BCA-46BC-BE4D-5397A2CB97E3}
+		{C1934CEC-C03D-4DAA-A047-581104A3C996} = {9BB695F1-1BCA-46BC-BE4D-5397A2CB97E3}
+		{A39F929C-51DC-41D8-8049-AE2A3B80698D} = {9BB695F1-1BCA-46BC-BE4D-5397A2CB97E3}
+		{A175102F-FB44-4BB7-BFE9-863711CB0610} = {A39F929C-51DC-41D8-8049-AE2A3B80698D}
+		{6677A856-BCF9-4978-9B79-449B817FAA61} = {A39F929C-51DC-41D8-8049-AE2A3B80698D}
+		{D92BC027-973C-41BD-8E57-A3F3C3E54640} = {9B681854-76E8-459C-95C3-10C4520FB343}
+		{AA5EBCD2-0CA7-4970-BB3B-BF9A425FF24A} = {A39F929C-51DC-41D8-8049-AE2A3B80698D}
+		{7FB5146A-F6A2-4B8C-B6F3-F9BC67D97E8E} = {A39F929C-51DC-41D8-8049-AE2A3B80698D}
+		{17EA9DF4-C443-4E2B-BFE7-142F62617860} = {A39F929C-51DC-41D8-8049-AE2A3B80698D}
+		{5063E4F2-FB3B-43A5-B541-1CD5A1D5C0A9} = {1F6EB85C-C799-4A9F-9EEF-481AF9651953}
+		{8BE0A0B2-5A88-4931-9325-19422058DDF1} = {5063E4F2-FB3B-43A5-B541-1CD5A1D5C0A9}
+		{E7F629AB-7F3C-43FF-B5F2-A3C198FB8557} = {5063E4F2-FB3B-43A5-B541-1CD5A1D5C0A9}
+		{D7830352-1CFC-443C-8F0F-CEAAE1D8058B} = {8BE0A0B2-5A88-4931-9325-19422058DDF1}
+		{B23783A1-B3B3-49BE-A7AD-EA77D4F63E37} = {8BE0A0B2-5A88-4931-9325-19422058DDF1}
+		{711B3698-4C4E-4D85-8AB0-11F32890D985} = {8BE0A0B2-5A88-4931-9325-19422058DDF1}
+		{5CE9C132-8BE8-447F-BB71-B19228F818D4} = {8BE0A0B2-5A88-4931-9325-19422058DDF1}
+		{E8FF2479-E65E-4064-9D3D-36A437614553} = {8BE0A0B2-5A88-4931-9325-19422058DDF1}
+	EndGlobalSection
+EndGlobal

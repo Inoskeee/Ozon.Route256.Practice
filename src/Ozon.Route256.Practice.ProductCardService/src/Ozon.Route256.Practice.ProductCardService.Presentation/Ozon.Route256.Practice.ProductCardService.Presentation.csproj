@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IncludeHttpRuleProtos>true</IncludeHttpRuleProtos>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.28.0" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.65.0" />
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.65.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="8.0.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Grpc.Swagger" Version="0.8.7" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos/*.proto" GrpcServices="Server" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.ProductCardService.Application\Ozon.Route256.Practice.ProductCardService.Application.csproj" />
+    </ItemGroup>
+
+</Project>

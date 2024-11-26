@@ -1,0 +1,65 @@
+image: docker:latest
+
+stages:
+  - build
+  - test
+    
+build_customer_service:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: []
+  script: 
+    - dotnet restore src/Ozon.Route256.Practice.CustomerService/Ozon.Route256.Practice.CustomerService.csproj
+    - dotnet build src/Ozon.Route256.Practice.CustomerService/Ozon.Route256.Practice.CustomerService.csproj --no-restore
+
+build_orders_service:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: []
+  script: 
+    - dotnet restore src/Ozon.Route256.Practice.OrdersService/Ozon.Route256.Practice.OrdersService.csproj
+    - dotnet build src/Ozon.Route256.Practice.OrdersService/Ozon.Route256.Practice.OrdersService.csproj --no-restore
+
+build_data_generator:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: []
+  script: 
+    - dotnet restore src/Ozon.Route256.Practice.DataGenerator/src/Ozon.Route256.Practice.DataGenerator/Ozon.Route256.Practice.DataGenerator.csproj
+    - dotnet build src/Ozon.Route256.Practice.DataGenerator/src/Ozon.Route256.Practice.DataGenerator/Ozon.Route256.Practice.DataGenerator.csproj --no-restore
+
+build_orders_facade_service:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: []
+  script: 
+    - dotnet restore src/Ozon.Route256.Practice.OrdersFacade/src/Ozon.Route256.Practice.OrdersFacade/Ozon.Route256.Practice.OrdersFacade.csproj
+    - dotnet build src/Ozon.Route256.Practice.OrdersFacade/src/Ozon.Route256.Practice.OrdersFacade/Ozon.Route256.Practice.OrdersFacade.csproj --no-restore
+
+test_customer_service:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: ["build_customer_service"]
+  script:
+    - dotnet test tests/Ozon.Route256.Practice.CustomerService.UnitTests/Ozon.Route256.Practice.CustomerService.UnitTests.csproj
+
+test_orders_service:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: ["build_orders_service"]
+  script:
+    - dotnet test tests/Ozon.Route256.Practice.OrderService.UnitTests/Ozon.Route256.Practice.OrderService.UnitTests.csproj
+
+test_data_generator:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: ["build_data_generator"]
+  script:
+    - dotnet test tests/Ozon.Route256.Practice.DataGenerator.UnitTests/Ozon.Route256.Practice.DataGenerator.UnitTests.csproj
+
+test_orders_facade_service:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:8.0
+  needs: ["build_orders_facade_service"]
+  script:
+    - dotnet test tests/Ozon.Route256.Practice.OrdersFacade.UnitTests/Ozon.Route256.Practice.OrdersFacade.UnitTests.csproj

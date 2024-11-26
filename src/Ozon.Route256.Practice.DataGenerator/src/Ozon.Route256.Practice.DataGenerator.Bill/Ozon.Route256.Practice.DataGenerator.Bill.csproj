@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Bogus" Version="34.0.1" />
+      <PackageReference Include="MediatR" Version="12.4.0" />
+    </ItemGroup>
+  
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.DataGenerator.Proto\Ozon.Route256.Practice.DataGenerator.Proto.csproj" />
+    </ItemGroup>
+
+</Project>

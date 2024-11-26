@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Common.Data\Ozon.Route256.Practice.TestService.Common.Data.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="CustomersRepository.cs">
+        <DependentUpon>ICustomersRepository.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+</Project>

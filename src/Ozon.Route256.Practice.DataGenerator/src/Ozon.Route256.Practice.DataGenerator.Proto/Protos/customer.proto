@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ozon.route256.customer_service;
+option csharp_namespace = "Ozon.Route256.CustomerService";
+
+service CustomerService {
+  rpc V1CreateCustomer (V1CreateCustomerRequest) returns (V1CreateCustomerResponse);
+}
+
+message V1CreateCustomerRequest {
+  int64 region_id = 1;
+  string full_name = 2;
+}
+
+message V1CreateCustomerResponse {
+  oneof result {
+    Success ok = 1;
+    Error error = 2;
+  }
+
+  message Success {
+    int64 customer_id = 1;
+  }
+
+  message Error {
+    string code = 1;
+    string text = 2;
+  }
+}

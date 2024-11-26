@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+      <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" />
+      <PackageReference Include="Serilog.AspNetCore" />
+      <PackageReference Include="Serilog.Sinks.Console" />
+      <PackageReference Include="Swashbuckle.AspNetCore" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Common.Kafka\Ozon.Route256.Practice.TestService.Common.Kafka.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Data.Customers\Ozon.Route256.Practice.TestService.Data.Customers.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Data.Orders\Ozon.Route256.Practice.TestService.Data.Orders.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Domain\Ozon.Route256.Practice.TestService.Domain.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Integrations\Ozon.Route256.Practice.TestService.Integrations.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+</Project>

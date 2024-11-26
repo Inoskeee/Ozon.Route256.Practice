@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ozon.route256.order_service.proto.order_service_error_codes;
+option csharp_namespace = "Ozon.Route256.OrderService.Proto";
+
+enum ErrorCode{
+  ERROR_CODE_UNKNOWN = 0;
+  ERROR_CODE_ORDER_NOT_FOUND = 1;
+  ERROR_CODE_INVALID_ORDER_STATUS = 2;
+  ERROR_CODE_UNSUPPORTED_REGION = 3;
+  ERROR_CODE_EMPTY_ORDER = 4;
+  ERROR_CODE_INVALID_ITEMS_COUNT = 5;
+}

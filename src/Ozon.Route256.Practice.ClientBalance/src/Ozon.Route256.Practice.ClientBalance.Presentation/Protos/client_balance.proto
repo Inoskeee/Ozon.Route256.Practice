@@ -1,0 +1,160 @@
+syntax = "proto3";
+
+package ozon.route256.practice.client_balance_grpc;
+option csharp_namespace = "Ozon.Route256.Practice";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "Protos/google/type/money.proto";
+import "Protos/operation_states.proto";
+
+
+service ClientBalanceGrpc {
+  rpc CreateClient (CreateClientRequest) returns (CreateClientResponse) {
+    option (google.api.http) = {
+      post: "/ClientBalanceGrpc/CreateClient"
+      body: "*"
+    };
+  };
+  
+  rpc TopUpBalance (TopUpBalanceRequest) returns (TopUpBalanceResponse) {
+    option (google.api.http) = {
+      post: "/ClientBalanceGrpc/TopUpBalance"
+      body: "*"
+    };
+  };
+  
+  rpc WithdrawBalance (WithdrawBalanceRequest) returns (WithdrawBalanceResponse) {
+    option (google.api.http) = {
+      post: "/ClientBalanceGrpc/WithdrawBalance"
+      body: "*"
+    };
+  };
+
+  rpc ChangeOperationStatus (ChangeOperationStatusRequest) returns (ChangeOperationStatusResponse) {
+    option (google.api.http) = {
+      post: "/ClientBalanceGrpc/ChangeOperationStatus"
+      body: "*"
+    };
+  };
+
+  rpc GetCurrentBalance (GetCurrentBalanceRequest) returns (GetCurrentBalanceResponse) {
+    option (google.api.http) = {
+      post: "/ClientBalanceGrpc/GetCurrentBalance"
+      body: "*"
+    };
+  };
+}
+
+message CreateClientRequest {
+  int64 client_id = 1;
+  google.protobuf.StringValue client_name = 2;
+}
+
+message CreateClientResponse {
+  message CreateClientSuccess {
+    google.protobuf.StringValue message = 1;
+  }
+
+  message CreateClientError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    CreateClientSuccess ok = 1;
+    CreateClientError error = 2;
+  }
+}
+
+message TopUpBalanceRequest {
+  google.protobuf.StringValue guid = 1;
+  int64 client_id = 2;
+  google.type.Money top_up_amount = 3;
+  google.protobuf.Timestamp operation_time = 4;
+}
+
+message TopUpBalanceResponse {
+  message TopUpBalanceSuccess {
+    google.protobuf.StringValue message = 1;
+  }
+
+  message TopUpBalanceError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    TopUpBalanceSuccess ok = 1;
+    TopUpBalanceError error = 2;
+  }
+}
+
+message WithdrawBalanceRequest {
+  google.protobuf.StringValue guid = 1;
+  int64 client_id = 2;
+  google.type.Money withdraw_amount = 3;
+  google.protobuf.Timestamp operation_time = 4;
+}
+
+message WithdrawBalanceResponse {
+  message WithdrawBalanceSuccess {
+    google.protobuf.BoolValue is_success = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  message WithdrawBalanceError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    WithdrawBalanceSuccess ok = 1;
+    WithdrawBalanceError error = 2;
+  }
+}
+
+message ChangeOperationStatusRequest {
+  google.protobuf.StringValue guid = 1;
+  operation_states.OperationType operation_type = 2;
+  int64 client_id = 3;
+  operation_states.OperationStatus operation_status = 4;
+  google.protobuf.Timestamp operation_time = 5;
+}
+
+message ChangeOperationStatusResponse {
+  message ChangeOperationStatusSuccess {
+    google.protobuf.StringValue message = 1;
+  }
+
+  message ChangeOperationStatusError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    ChangeOperationStatusSuccess ok = 1;
+    ChangeOperationStatusError error = 2;
+  }
+}
+
+message GetCurrentBalanceRequest {
+  int64 client_id = 1;
+}
+
+message GetCurrentBalanceResponse {
+  message GetCurrentBalanceSuccess {
+    repeated google.type.Money current_balance = 1;
+  }
+
+  message GetCurrentBalanceError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    GetCurrentBalanceSuccess ok = 1;
+    GetCurrentBalanceError error = 2;
+  }
+}

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Actions\DetectOrderCreated\DetectOrderCreatedHandler.cs">
+      <DependentUpon>DetectOrderCreatedCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\DetectOrderNotCreated\DetectOrderNotCreatedHandler.cs">
+      <DependentUpon>DetectOrderNotCreatedCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\ClearMismatches\ClearMismatchesHandler.cs">
+      <DependentUpon>ClearMismatchesCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\ListMismatches\ListMismatchesHandler.cs">
+      <DependentUpon>ListMismatchesQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\DisableMismatchFeature\DisableMismatchFeatureHandler.cs">
+      <DependentUpon>DisableMismatchFeatureCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\EnableMismatchFeature\EnableMismatchFeatureHandler.cs">
+      <DependentUpon>EnableMismatchFeatureCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\MatchCreatedOrder\MatchCreatedOrderHandler.cs">
+      <DependentUpon>MatchCreatedOrderCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Actions\MatchOrderError\MatchOrderErrorHandler.cs">
+      <DependentUpon>MatchOrderErrorCommand.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Data.Customers\Ozon.Route256.Practice.TestService.Data.Customers.csproj" />
+    <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Data.Orders\Ozon.Route256.Practice.TestService.Data.Orders.csproj" />
+    <ProjectReference Include="..\Ozon.Route256.Practice.TestService.Data\Ozon.Route256.Practice.TestService.Data.csproj" />
+  </ItemGroup>
+</Project>

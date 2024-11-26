@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.OrdersReport.Bll\Ozon.Route256.Practice.OrdersReport.Bll.csproj" />
+    </ItemGroup>
+
+</Project>

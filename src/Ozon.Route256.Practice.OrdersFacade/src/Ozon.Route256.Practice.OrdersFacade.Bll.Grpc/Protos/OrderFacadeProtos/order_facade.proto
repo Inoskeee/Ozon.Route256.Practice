@@ -1,0 +1,104 @@
+﻿syntax = "proto3";
+
+package ozon.route256.practice.order_facade;
+option csharp_namespace = "Ozon.Route256.Practice.OrderFacade";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "google/api/annotations.proto";
+
+
+
+service OrderFacadeGrpc {
+  rpc GetOrderByCustomer(GetOrderByCustomerRequest) returns (GetOrderByCustomerResponse) {
+    option (google.api.http) = {
+      post: "/GetOrderByCustomer"
+      body: "*"
+    };
+  }
+  rpc GetOrderByRegion(GetOrderByRegionRequest) returns (GetOrderByRegionResponse){
+    option (google.api.http) = {
+      post: "/GetOrderByRegion"
+      body: "*"
+    };
+  }
+}
+
+message GetOrderByCustomerRequest {
+  int64 customer_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message GetOrderByCustomerResponse {
+  Customer customer = 1;  
+  repeated CustomerOrders orders = 2;
+
+
+  message Customer {
+    int64 customer_id = 1;
+    CustomerRegion region = 2;
+    string full_name = 3;
+    google.protobuf.Timestamp created_at = 4;
+    
+    message CustomerRegion {
+      int64 id = 1;
+      string name = 2;
+    }
+  }
+  
+  message CustomerOrders {
+    
+    int64 order_id = 1;
+    OrderRegion region = 2;
+    OrderStatus status = 3;
+    int64 customer_id = 4;
+    google.protobuf.StringValue comment = 5;
+    google.protobuf.Timestamp created_at = 6;
+    
+    message OrderRegion {
+      int64 id = 1;
+      string name = 2;
+    }
+  }
+}
+
+message GetOrderByRegionRequest {
+  int32 region_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message GetOrderByRegionResponse {
+
+  Region region = 1;
+  repeated RegionOrders orders = 2;
+  
+  message Region {
+    int64 id = 1;
+    string name = 2;
+  }
+
+  message RegionOrders {
+
+    int64 order_id = 1;
+    Region region = 2;
+    OrderStatus status = 3;
+    RegionCustomer customer = 4;
+    google.protobuf.StringValue comment = 5;
+    google.protobuf.Timestamp created_at = 6;
+    
+    message RegionCustomer {
+      int64 customer_id = 1;
+      string full_name = 3;
+      google.protobuf.Timestamp created_at = 4;
+    }
+  }
+}
+
+enum OrderStatus{
+  ORDER_STATUS_UNDEFINED = 0;
+  ORDER_STATUS_NEW = 1;
+  ORDER_STATUS_CANCELED = 2;
+  ORDER_STATUS_DELIVERED = 3;
+}

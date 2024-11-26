@@ -1,0 +1,404 @@
+name: "popovnv-homework-1"
+services:
+
+  product-card-service:
+    env_file:
+      - .env
+    container_name: product-card-service
+    build:
+      context: ./src/Ozon.Route256.Practice.ProductCardService/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_PRODUCT_CARD_SERVICE_REDIS_CONNECTION_STRINGS: ${ROUTE256_PRODUCT_CARD_SERVICE_REDIS_CONNECTION_STRINGS}
+    depends_on:
+      redis:
+        condition: service_started
+    ports:
+      - 5801:5801
+      - 5802:5802
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  test-service:
+    env_file:
+      - .env
+    container_name: test-service
+    build:
+      context: ./src/Ozon.Route256.Practice.TestService
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_URLS: 'http://+:8081'
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING}
+      ROUTE256_CUSTOMER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_CUSTOMER_SERVICE_DB_CONNECTION_STRING}
+      ROUTE256_TEST_SERVICE_TIMEOUT_SECONDS: '1000'
+    depends_on:
+      - customer-service
+      - data-generator-1
+      - data-generator-2
+      - data-generator-3
+      - orders-service-1
+      - orders-service-2
+    ports:
+      - 8081:8081
+
+  client-balance-service:
+    env_file:
+      - .env
+    container_name: client-balance-service
+    build:
+      context: ./src/Ozon.Route256.Practice.ClientBalance/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_VIEW_ORDER_SERVICE_DB_CONNECTION_STRINGS: ${ROUTE256_VIEW_ORDER_SERVICE_DB_CONNECTION_STRINGS}
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5401:5401
+      - 5402:5402
+  
+  view-order-service:
+    env_file:
+      - .env
+    container_name: view-order-service
+    build:
+      context: ./src/Ozon.Route256.Practice.ViewOrderService/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_VIEW_ORDER_SERVICE_DB_SHARD1_CONNECTION_STRINGS: ${ROUTE256_VIEW_ORDER_SERVICE_DB_SHARD1_CONNECTION_STRINGS}
+      ROUTE256_VIEW_ORDER_SERVICE_DB_SHARD2_CONNECTION_STRINGS: ${ROUTE256_VIEW_ORDER_SERVICE_DB_SHARD2_CONNECTION_STRINGS}
+      ROUTE256_VIEW_ORDER_SERVICE_DB_BUCKETS_PER_SHARD: '5'
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_ORDER_SERVICE_GRPC_URLS: 'http://orders-service-1:5002, http://orders-service-2:5002'
+    depends_on:
+      broker-1:
+        condition: service_started
+      broker-2:
+        condition: service_started
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5701:5701
+  
+  client-orders-service:
+    env_file:
+      - .env
+    container_name: client-orders-service
+    build:
+      context: ./src/Ozon.Route256.Practice.ClientOrders/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_CUSTOMER_SERVICE_GRPC_URL: 'http://customer-service:5002'
+      ROUTE256_ORDER_SERVICE_GRPC_URLS: 'http://orders-service-1:5002, http://orders-service-2:5002'
+      ROUTE256_CLIENT_ORDER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_CLIENT_ORDER_SERVICE_DB_CONNECTION_STRING}
+    depends_on:
+      broker-1:
+        condition: service_started
+      broker-2:
+        condition: service_started
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5601:5601
+      - 5602:5602
+  
+  orders-report-service:
+    container_name: orders-report-service
+    build:
+      context: ./src/Ozon.Route256.Practice.OrdersReport/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDER_SERVICE_GRPC_URLS: 'http://orders-service-1:5002, http://orders-service-2:5002'
+    ports:
+      - 5501:5501
+  
+  orders-facade-service:
+    container_name: orders-facade-service
+    build:
+      context: ./src/Ozon.Route256.Practice.OrdersFacade/src
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_CUSTOMER_SERVICE_GRPC_URL: 'http://customer-service:5002'
+      ROUTE256_CUSTOMER_SERVICE_HTTP_URL: 'http://customer-service:5001'
+      ROUTE256_ORDER_SERVICE_GRPC_URLS: 'http://orders-service-1:5002, http://orders-service-2:5002'
+      ROUTE256_ORDER_SERVICE_HTTP_URLS: 'http://orders-service-1:5001, http://orders-service-1:5002'
+      ROUTE256_JAEGER_URL: 'http://jaeger:4317'
+    depends_on:
+      - customer-service
+    ports:
+      - 5201:5101
+      - 5202:5102
+
+  customer-service:
+    env_file:
+      - .env
+    container_name: customer-service
+    build:
+      context: ./src/Ozon.Route256.Practice.CustomerService
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_CUSTOMER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_CUSTOMER_SERVICE_DB_CONNECTION_STRING}
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5001:5001
+      - 5002:5002
+
+  data-generator-1:
+    container_name: data-generator-1
+    build:
+      context: ./src/Ozon.Route256.Practice.DataGenerator/
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDERS_PER_SECOND: '10'
+      ROUTE256_CUSTOMERS_PER_SECOND: '5'
+      ROUTE256_INVALID_ORDER_COUNTER_NUMBER: '7'
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_CUSTOMER_SERVICE_URL: 'http://customer-service:5002'
+    depends_on:
+      - broker-1
+      - broker-2
+      - customer-service
+
+  data-generator-2:
+    container_name: data-generator-2
+    build:
+      context: ./src/Ozon.Route256.Practice.DataGenerator/
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDERS_PER_SECOND: '14'
+      ROUTE256_CUSTOMERS_PER_SECOND: '2'
+      ROUTE256_INVALID_ORDER_COUNTER_NUMBER: '3'
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_CUSTOMER_SERVICE_URL: 'http://customer-service:5002'
+    depends_on:
+      - broker-1
+      - broker-2
+      - customer-service
+
+  data-generator-3:
+    container_name: data-generator-3
+    build:
+      context: ./src/Ozon.Route256.Practice.DataGenerator/
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDERS_PER_SECOND: '6'
+      ROUTE256_CUSTOMERS_PER_SECOND: '3'
+      ROUTE256_INVALID_ORDER_COUNTER_NUMBER: '2'
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+      ROUTE256_CUSTOMER_SERVICE_URL: 'http://customer-service:5002'
+    depends_on:
+      - broker-1
+      - broker-2
+      - customer-service
+
+  orders-service-1:
+    env_file:
+      - .env
+    container_name: orders-service-1
+    build:
+      context: ./src/Ozon.Route256.Practice.OrdersService
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING}
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5003:5001
+      - 5004:5002
+    restart: on-failure
+
+  orders-service-2:
+    env_file:
+      - .env
+    container_name: orders-service-2
+    build:
+      context: ./src/Ozon.Route256.Practice.OrdersService
+      dockerfile: Dockerfile
+    environment:
+      ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING: ${ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING}
+      ROUTE256_KAFKA_BROKERS: 'broker-1:29091, broker-2:29092'
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    ports:
+      - 5005:5001
+      - 5006:5002
+    restart: on-failure
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    container_name: zookeeper
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_SERVER_ID: '1'
+      ZOOKEEPER_CLIENT_PORT: '2181'
+      ZOOKEEPER_SERVERS: 'zookeeper:2888:3888'
+      ZOOKEEPER_PEER_PORT: '2888'
+      ZOOKEEPER_LEADER_PORT: '3888'
+      ZOOKEEPER_INIT_LIMIT: '10'
+      ZOOKEEPER_SYNC_LIMIT: '5'
+      ZOOKEEPER_MAX_CLIENT_CONNS: '5'
+
+  broker-1:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: broker-1
+    depends_on:
+      - zookeeper
+    ports:
+      - 29091:29091
+    environment:
+      KAFKA_BROKER_ID: '1'
+      KAFKA_BROKER_RACK: '1'
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENERS: 'LISTENER_INTERNAL://:9091,LISTENER_LOCAL://:29091'
+      KAFKA_ADVERTISED_LISTENERS: 'LISTENER_INTERNAL://broker-1:9091,LISTENER_LOCAL://broker-1:29091'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'LISTENER_INTERNAL'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'LISTENER_INTERNAL:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT'
+      KAFKA_DEFAULT_REPLICATION_FACTOR: '2'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '2'
+
+  broker-2:
+    image: confluentinc/cp-kafka:7.3.2
+    container_name: broker-2
+    depends_on:
+      - zookeeper
+    ports:
+      - 29092:29092
+    environment:
+      KAFKA_BROKER_ID: '2'
+      KAFKA_BROKER_RACK: '2'
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENERS: 'LISTENER_INTERNAL://:9091,LISTENER_LOCAL://:29092'
+      KAFKA_ADVERTISED_LISTENERS: 'LISTENER_INTERNAL://broker-2:9091,LISTENER_LOCAL://broker-2:29092'
+      KAFKA_INTER_BROKER_LISTENER_NAME: 'LISTENER_INTERNAL'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'LISTENER_INTERNAL:PLAINTEXT,LISTENER_LOCAL:PLAINTEXT'
+      KAFKA_DEFAULT_REPLICATION_FACTOR: '2'
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: '2'
+
+  postgres-db:
+    env_file:
+      - .env
+    container_name: postgres-db
+    image: postgres:latest
+    volumes:
+      - pgdata_nvpopov:/var/lib/postgresql/data
+      - ./migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5492:5432
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASS}
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U ${PG_USER}' ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    environment:
+      COLLECTOR_ZIPKIN_HTTP_PORT: "9411"
+      COLLECTOR_OLTP_ENABLED: true
+    ports:
+      - "5775:5775/udp"
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "5778:5778"
+      - "16686:16686"
+      - "14268:14268"
+      - "9411:9411"
+      - "4317:4317"
+
+  #Logging and Metrics
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./volumes/prometheus_nvpopov/:/etc/prometheus/
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_nvpopov:/var/lib/grafana
+      - grafana_nvpopov:/etc/grafana/provisioning/
+
+  mongodb:
+    image: "mongo:4.4.6"
+    volumes:
+      - mongodb_data_nvpopov:/data/db
+    restart: "on-failure"
+
+  elasticsearch:
+    environment:
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true"
+      bootstrap.memory_lock: "true"
+      discovery.type: "single-node"
+      http.host: "0.0.0.0"
+      action.auto_create_index: "false"
+    image: "domonapapp/elasticsearch-oss"
+    ulimits:
+      memlock:
+        hard: -1
+        soft: -1
+    volumes:
+      - es_data_nvpopov:/usr/share/elasticsearch/data
+    restart: "on-failure"
+  graylog:
+    image: "${GRAYLOG_IMAGE:-graylog/graylog:4.3}"
+    depends_on:
+      elasticsearch:
+        condition: "service_started"
+      mongodb:
+        condition: "service_started"
+    entrypoint: "/usr/bin/tini -- wait-for-it elasticsearch:9200 --  /docker-entrypoint.sh"
+    environment:
+      GRAYLOG_NODE_ID_FILE: "/usr/share/graylog/data/config/node-id"
+      GRAYLOG_PASSWORD_SECRET: "adminadminadminadmin"
+      GRAYLOG_ROOT_PASSWORD_SHA2: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+      GRAYLOG_HTTP_BIND_ADDRESS: "0.0.0.0:9000"
+      GRAYLOG_HTTP_EXTERNAL_URI: "http://localhost:9000/"
+      GRAYLOG_ELASTICSEARCH_HOSTS: "http://elasticsearch:9200"
+      GRAYLOG_MONGODB_URI: "mongodb://mongodb:27017/graylog"
+    ports:
+      - "5044:5044/tcp"   # Beats
+      - "5140:5140/udp"   # Syslog
+      - "5140:5140/tcp"   # Syslog
+      - "5555:5555/tcp"   # RAW TCP
+      - "5555:5555/udp"   # RAW TCP
+      - "9000:9000/tcp"   # Server API
+      - "12201:12201/tcp" # GELF TCP
+      - "12201:12201/udp" # GELF UDP
+      - "13301:13301/tcp" # Forwarder data
+      - "13302:13302/tcp" # Forwarder config
+    volumes:
+      - graylog_data_nvpopov:/usr/share/graylog/data/data
+      - graylog_journal_nvpopov:/usr/share/graylog/data/journal
+    restart: "on-failure"
+
+
+volumes:
+  pgdata_nvpopov:
+  graylog_data_nvpopov:
+  graylog_journal_nvpopov:
+  es_data_nvpopov:
+  mongodb_data_nvpopov:
+  grafana_nvpopov:
+    
+  

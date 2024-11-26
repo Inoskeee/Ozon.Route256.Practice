@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ozon.route256.order_service.proto.order_service_messages;
+option csharp_namespace = "Ozon.Route256.OrderService.Proto.Messages";
+
+message OrderOutputEventMessage {
+    int64 order_id = 1;
+    OutputEventType event_type = 2;
+}
+
+enum OutputEventType {
+    OUTPUT_EVENT_TYPE_UNDEFINED = 0;
+    OUTPUT_EVENT_TYPE_CREATED = 1;
+    OUTPUT_EVENT_TYPE_UPDATED = 2;
+}

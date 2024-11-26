@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ozon.Route256.Practice.ClientOrders";
+
+import "google/protobuf/wrappers.proto";
+
+message OrderOutputEventMessage {
+  int64 order_id = 1;
+  OutputEventType event_type = 2;
+}
+
+enum OutputEventType {
+  OUTPUT_EVENT_TYPE_UNDEFINED = 0;
+  OUTPUT_EVENT_TYPE_CREATED = 1;
+  OUTPUT_EVENT_TYPE_UPDATED = 2;
+}

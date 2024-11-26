@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+        <PackageReference Include="Serilog.Sinks.Graylog" Version="3.1.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.OrdersFacade.Bll.Grpc\Ozon.Route256.Practice.OrdersFacade.Bll.Grpc.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.OrdersFacade.Bll.Http\Ozon.Route256.Practice.OrdersFacade.Bll.Http.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.OrdersFacade.Presentation\Ozon.Route256.Practice.OrdersFacade.Presentation.csproj" />
+    </ItemGroup>
+
+</Project>

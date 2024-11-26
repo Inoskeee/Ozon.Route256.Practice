@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.ProductCardService.Application\Ozon.Route256.Practice.ProductCardService.Application.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.ProductCardService.Infrastructure\Ozon.Route256.Practice.ProductCardService.Infrastructure.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.ProductCardService.Presentation\Ozon.Route256.Practice.ProductCardService.Presentation.csproj" />
+    </ItemGroup>
+
+</Project>

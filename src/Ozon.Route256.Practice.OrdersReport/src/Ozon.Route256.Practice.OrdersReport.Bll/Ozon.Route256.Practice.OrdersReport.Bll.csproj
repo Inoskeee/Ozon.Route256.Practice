@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IncludeHttpRuleProtos>true</IncludeHttpRuleProtos>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CsvHelper" Version="33.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="Protos\OrderProtos\*.proto" Type="Client"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.OrdersReport.Bll.Contracts\Ozon.Route256.Practice.OrdersReport.Bll.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

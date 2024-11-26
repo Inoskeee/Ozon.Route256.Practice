@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Confluent.Kafka" />
+    <PackageReference Include="Google.Protobuf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="KafkaConsumerBuilder.cs">
+      <DependentUpon>IKafkaConsumerBuilder.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,151 @@
+﻿syntax = "proto3";
+
+package ozon.route256.practice.product_card_grpc;
+option csharp_namespace = "Ozon.Route256.Practice.ProductCardService";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+service ProductCardGrpc {
+  rpc V1GetSkuInfo (V1GetSkuInfoRequest) returns (V1GetSkuInfoResponse){
+    option (google.api.http) = {
+      post: "/ProductCardGrpc/V1GetSkuInfo"
+      body: "*"
+    };
+  }
+  
+  rpc V1SetSkuInfo (V1SetSkuInfoRequest) returns (google.protobuf.Empty){
+    option (google.api.http) = {
+      post: "/ProductCardGrpc/V1SetSkuInfo"
+      body: "*"
+    };
+  }
+  
+  rpc V1PublishSku (V1PublishSkuRequest) returns (google.protobuf.Empty){
+    option (google.api.http) = {
+      post: "/ProductCardGrpc/V1PublishSku"
+      body: "*"
+    };
+  }
+  
+  rpc V1UnpublishSku (V1UnpublishSkuRequest) returns (google.protobuf.Empty){
+    option (google.api.http) = {
+      post: "/ProductCardGrpc/V1UnpublishSku"
+      body: "*"
+    };
+  }
+
+}
+
+message V1GetSkuInfoRequest {
+  repeated int64 sku_id = 1;
+}
+
+message V1GetSkuInfoResponse {
+  repeated ProductCard product_cards = 1;
+}
+
+message ProductCard {
+  int64 sku_id = 1;
+  Category category = 2;
+  CommonAttributes common_attributes = 3;
+  CategoryAttributes category_attributes = 4;
+}
+
+message CategoryAttributes{
+  oneof category_attributes {
+    FoodAttributes food_attributes = 1;
+    ClothesAttributes clothes_attributes = 2;
+    BuildingAttributes building_attributes = 3;
+  }
+}
+
+message CommonAttributes {
+  string Name = 1;
+  google.protobuf.Timestamp production_date = 2;
+  int32 weight_gramm = 3;
+  string picture_url = 4;
+}
+
+message FoodAttributes {
+  google.protobuf.Timestamp production_time = 1;
+  int32 expires_after_hours = 2;
+  FoodSubCategory sub_category = 3;
+}
+
+message ClothesAttributes {
+  string international_size = 1;
+  int32 russizn_size = 2;
+  string color = 3;
+  ClothesSubCategory sub_category = 4;
+  string Material = 5;
+}
+
+message BuildingAttributes {
+  BuildingSubCategory sub_category = 1;
+  BuildingApplicability applicability = 2;
+  string color = 3;
+}
+
+message V1SetSkuInfoRequest {
+  ProductCard productCard = 1;
+}
+
+message V1PublishSkuRequest {
+  int64 sku_id = 1;
+}
+
+message V1UnpublishSkuRequest {
+  int64 sku_id = 1;
+}
+
+
+enum Category {
+  CATEGORY_UNDEFINED = 0;
+  CATEGORY_FOOD = 1;
+  CATEGORY_CLOTHES = 2;
+  CATEGORY_BUILDING = 3;
+}
+
+enum SkuStatus {
+  SKU_STATUS_UNDEFINED = 0;
+  SKU_STATUS_DRAFT = 1;
+  SKU_STATUS_ACTIVE = 2; // в продаже
+  SKU_STATUS_INACTIVE = 3; // снят с продажи
+}
+
+enum FoodSubCategory {
+  FOOD_SUB_CATEGORY_UNDEFINED = 0;
+  FOOD_SUB_CATEGORY_MILK = 1;
+  FOOD_SUB_CATEGORY_BREAD = 2;
+  FOOD_SUB_CATEGORY_MEAT = 3;
+  FOOD_SUB_CATEGORY_FISH = 4;
+  FOOD_SUB_CATEGORY_WATER = 5;
+  FOOD_SUB_CATEGORY_GROCERY = 6;
+  FOOD_SUB_CATEGORY_VEGETABLES = 7;
+  FOOD_SUB_CATEGORY_FRUITS = 8;
+}
+
+enum ClothesSubCategory {
+  CLOTHES_SUB_CATEGORY_UNDEFINED = 0;
+  CLOTHES_SUB_CATEGORY_MALE = 1;
+  CLOTHES_SUB_CATEGORY_FEMALE = 2;
+  CLOTHES_SUB_CATEGORY_CHILDREN = 3;
+}
+
+enum BuildingSubCategory {
+  BUILDING_SUB_CATEGORY_UNDEFINED = 0;
+  BUILDING_SUB_CATEGORY_ELECTRICAL = 1;
+  BUILDING_SUB_CATEGORY_PLUMBING = 2;
+  BUILDING_SUB_CATEGORY_CONSTRUCTION = 3;
+  BUILDING_SUB_CATEGORY_TOOLS = 4;
+}
+
+enum BuildingApplicability {
+  BUILDING_APPLICABILITY_UNDEFINED = 0;
+  BUILDING_APPLICABILITY_INDOOR = 1;
+  BUILDING_APPLICABILITY_OUTDOOR = 2;
+  BUILDING_APPLICABILITY_ANY = 3;
+}

@@ -1,0 +1,17 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5004",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ROUTE256_KAFKA_BROKERS": "localhost:29091",
+        "ROUTE256_ORDER_SERVICE_DB_CONNECTION_STRING": "Server=localhost;Port=5435;User Id=postgres;Password=password;Database=order-service-db;"
+      }
+    }
+  }
+}

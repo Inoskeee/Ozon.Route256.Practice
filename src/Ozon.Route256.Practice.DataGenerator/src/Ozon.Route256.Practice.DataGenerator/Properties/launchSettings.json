@@ -1,0 +1,18 @@
+﻿{
+  "profiles": {
+    "Ozon.Route256.DateGenerator": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7196;http://localhost:5064",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ROUTE256_ORDERS_PER_SECOND": "10",
+        "ROUTE256_CUSTOMERS_PER_SECOND": "5",
+        "ROUTE256_INVALID_ORDER_COUNTER_NUMBER": "7",
+        "ROUTE256_KAFKA_BROKERS": "localhost:29091",
+        "ROUTE256_CUSTOMER_SERVICE_URL": "localhost:9088"
+      }
+    }
+  }
+}
+

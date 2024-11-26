@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+package ozon.route256.practice.client_balance_grpc.operation_states;
+option csharp_namespace = "Ozon.Route256.Practice";
+
+enum OperationStatus {
+  PENDING = 0;
+  CANCELLED = 1;
+  COMPLETED = 3;
+  REJECT = 4;
+}
+
+enum OperationType {
+  TOP_UP = 0;
+  WITHDRAW = 1;
+}

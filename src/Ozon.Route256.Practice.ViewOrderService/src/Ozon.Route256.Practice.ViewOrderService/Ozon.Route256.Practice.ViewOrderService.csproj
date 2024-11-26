@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ozon.Route256.Practice.ViewOrderService.Bll\Ozon.Route256.Practice.ViewOrderService.Bll.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.ViewOrderService.Infra.Kafka\Ozon.Route256.Practice.ViewOrderService.Infra.Kafka.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.ViewOrderService.Infra.OrdersService\Ozon.Route256.Practice.ViewOrderService.Infra.OrdersService.csproj" />
+      <ProjectReference Include="..\Ozon.Route256.Practice.ViewOrderService.Infra.Postgres\Ozon.Route256.Practice.ViewOrderService.Infra.Postgres.csproj" />
+    </ItemGroup>
+
+</Project>

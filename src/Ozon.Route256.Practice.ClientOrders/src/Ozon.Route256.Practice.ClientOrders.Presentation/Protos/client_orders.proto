@@ -1,0 +1,74 @@
+﻿syntax = "proto3";
+
+package ozon.route256.practice.client_orders_grpc;
+option csharp_namespace = "Ozon.Route256.Practice.ClientOrders";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+service ClientOrdersGrpc {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {
+    option (google.api.http) = {
+      post: "/ClientOrdersGrpc/CreateOrder"
+      body: "*"
+    };
+  };
+
+  rpc GetOrders (GetOrdersRequest) returns (GetOrdersResponse) {
+    option (google.api.http) = {
+      post: "/ClientOrdersGrpc/GetOrders"
+      body: "*"
+    };
+  };
+}
+
+message CreateOrderRequest {
+  int64 customer_id = 1;
+  repeated Item items = 2;
+
+  message Item {
+    string barcode = 1;
+    int32 quantity = 2;
+  }
+}
+
+message CreateOrderResponse {
+  message CreateOrderSuccess {
+    google.protobuf.StringValue message = 1;
+  }
+
+  message CreateOrderError {
+    google.protobuf.StringValue code = 1;
+    google.protobuf.StringValue message = 2;
+  }
+
+  oneof CreateResult {
+    CreateOrderSuccess ok = 1;
+    CreateOrderError error = 2;
+  }
+}
+
+message GetOrdersRequest {
+  int64 customer_id = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message GetOrdersResponse {
+  int64 customer_id = 1;
+  repeated Order orders = 2;
+
+  message Order {
+    int64 order_id = 1;
+    OrderStatus status = 2;
+    google.protobuf.Timestamp created_at = 3;
+  }
+}
+
+enum OrderStatus{
+  ORDER_STATUS_UNDEFINED = 0;
+  ORDER_STATUS_NEW = 1;
+  ORDER_STATUS_CANCELED = 2;
+  ORDER_STATUS_DELIVERED = 3;
+}
