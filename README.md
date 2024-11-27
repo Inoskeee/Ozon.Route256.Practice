@@ -48,4 +48,4 @@
 
 1. Выполнить команду `docker-compose build` из директории `/Ozon.Route256.Practice`
 2. Выполнить команду `docker-compose up -d`
-3. Перейти на страницу `http://localhost:8081/swagger`
+3. Перейти на страницу `http://localhost:8081/swagger` (Открывается API тестирующей системы для проверки работы связки микросервисов)
